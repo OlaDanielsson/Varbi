@@ -12,15 +12,15 @@
 
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
+            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md text-center">
+                Du är inloggad - klicka på "Min dagbok" i menyn för att skriva ett nytt inlägg.
             </header>
 
-            <div class="w-full p-6">
+            <!-- <div class="w-full p-6">
                 <p class="text-gray-700">
-                    You are logged in!
+                    Du är inloggad.
                 </p>
-            </div>
+            </div> -->
         </section>
     </div>
 </main>

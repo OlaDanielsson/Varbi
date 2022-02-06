@@ -32,7 +32,7 @@
                         @endif
                     @else
                         <span>{{ Auth::user()->name }}</span>
-                        <a class="no-underline hover:underline" href="{{ url('/posts') }}">{{ __('Mina dagbok') }}</a>
+                        <a class="no-underline hover:underline" href="{{ url('/posts') }}">{{ __('Min dagbok') }}</a>
 
                         <a href="{{ route('logout') }}"
                            class="no-underline hover:underline"
@@ -45,6 +45,7 @@
                 </nav>
             </div>
         </header>
+
         @yield('content')
     </div>
 </body>
