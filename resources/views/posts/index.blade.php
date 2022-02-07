@@ -47,7 +47,7 @@
                    </form>
                </div>
                <span class="upppercase text-blue-500 font-bold text-xs intalic">
-                   Datum: {{$post->timestamp}}
+                   <!-- Datum: {{$post->timestamp}} -->
                </span>
 
                <h2 class="text-gray-700 text-3xl"> 

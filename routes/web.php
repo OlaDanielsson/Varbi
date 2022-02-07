@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +17,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
 Route::resource('/posts', PostsController::class);
 
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::get('/', function () {
+    return redirect('/login');
+});

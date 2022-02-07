@@ -43,9 +43,6 @@ class PostsController extends Controller
 
         $request->validated();
 
-        //If valid, it will create a post
-        //If not, throw a validationexcetion
-
         $post = Posts::create([
             'title' => $request->input('title'),
             'content' => $request->input('content'),

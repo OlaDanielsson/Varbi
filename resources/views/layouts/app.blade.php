@@ -21,14 +21,14 @@
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/posts') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ __('Varbi') }}
                     </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Logga in') }}</a>
                         @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Registrera') }}</a>
                         @endif
                     @else
                         <span>{{ Auth::user()->name }}</span>
