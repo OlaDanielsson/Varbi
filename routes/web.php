@@ -6,6 +6,7 @@ use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Auth;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

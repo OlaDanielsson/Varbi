@@ -24,7 +24,7 @@ class CreateValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts',
+            'title' => 'required|min:0|max:10000',
             'content' => 'required|min:0|max:10000'
         ];
     }

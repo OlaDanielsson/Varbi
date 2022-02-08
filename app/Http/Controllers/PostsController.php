@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Posts;
 use App\Http\Requests\CreateValidationRequest;
+use Illuminate\Support\Facades\Gate;
+
+
 
 class PostsController extends Controller
 {
@@ -15,6 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
+
         //SELECT * FROM Posts
         $posts = Posts::all();
         return view('posts.index', [
@@ -69,11 +73,14 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Posts $post)
     {
-        $post = Posts::find($id)->first();
-
-        return view('posts.edit')->with('post', $post);
+        if($post->user_id != auth()->id()) {
+            return 'Nope.';
+        } else {
+            return view('posts.edit',compact('post'));
+        }
+              
     }
 
     /**
@@ -87,7 +94,6 @@ class PostsController extends Controller
     {
 
         $request->validated();
-
         $post = Posts::where('id', $id)
         ->update([
             'title' => $request->input('title'),
@@ -105,9 +111,13 @@ class PostsController extends Controller
      */
     public function destroy(Posts $post)
     {
-        
-        $post->delete();
 
-        return redirect('/posts');
+        if($post->user_id != auth()->id()) {
+            return 'Nope.';
+        }
+        else{
+            $post->delete();
+            return redirect('/posts');
+        }
     }
 }

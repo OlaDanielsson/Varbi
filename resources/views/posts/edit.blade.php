@@ -39,8 +39,7 @@
                         mb-10"
                         rows="3"
                         name="content"
-                        value="{{ $post->content }}"
-                    ></textarea>
+                    >{{ $post->content }}</textarea>
                 <button type="submit" class="bg-green-500 block shadow-5xl mb-10 p-2 w-80
                 uppercase font-bold">
                     Uppdatera
